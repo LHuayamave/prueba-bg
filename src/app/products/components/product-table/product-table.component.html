@@ -1,0 +1,39 @@
+<div class="overflow-x-auto px-12">
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Título</th>
+        <th>Precio</th>
+        <th>Cantidad</th>
+        <th>Acción</th>
+      </tr>
+    </thead>
+    <tbody>
+      @for (product of products(); track product.id) {
+      <tr>
+        <td>
+          <div class="flex items-center gap-3">
+            <div class="avatar">
+              <div class="mask mask-squircle h-12 w-12">
+                <img [src]="product.images | productImage" [alt]="product.title" />
+              </div>
+            </div>
+            <div>
+              <div class="font-bold">{{ product.title }}</div>
+            </div>
+          </div>
+        </td>
+        <td>
+          {{ product.price | currency }}
+        </td>
+        <td>
+          <input #qty type="number" min="1" class="input input-bordered w-full max-w-xs" />
+        </td>
+        <td>
+          <button class="btn btn-primary" (click)="addProductToCart(product, qty)">Añadir a carrito</button>
+        </td>
+      </tr>
+      }
+    </tbody>
+  </table>
+</div>

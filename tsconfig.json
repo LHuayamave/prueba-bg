@@ -3,6 +3,12 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
+    "baseUrl": "",
+    "paths": {
+      "@products/*": ["./src/app/products/*"],
+      "@shopping-cart/*": ["./src/app/shopping-cart/*"],
+      "@store-front/*": ["./src/app/store-front/*"]
+    },
     "outDir": "./dist/out-tsc",
     "strict": true,
     "noImplicitOverride": true,

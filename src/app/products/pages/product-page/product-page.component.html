@@ -1,0 +1,8 @@
+<div class="p-8 px-12">
+  <h1 class="text-3xl">
+    Carrito de compra BG
+  </h1>
+  <hr class="mb-4" />
+  <app-product-table [products]="productResource.value() ?? []" />
+  <floating-cart />
+</div>
